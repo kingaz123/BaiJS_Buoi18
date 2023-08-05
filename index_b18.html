@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quang_bTJS-buoi18</title>
+  <!-- CSS Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <!-- FONT GOOGLE -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="container">
+  <header class="nhapMang">
+    <h2 class="text-center mt-2 mb-4">Bài tập JS buổi 18</h2>
+    <form>
+      <div id="themSo" class="form-row form-group">
+        <div class="col-3 mr-3">
+          <input type="text" class="form-control" id="nhapSo" placeholder="Nhập một số nguyên">
+        </div>
+        <div class="d-flex justify-content-center">
+          <button id="btnThemSo" type="button" class="btn btn-success mr-2">Thêm số vào mảng</button>
+          <button id="btnXoaMang" type="button" class="btn btn-success">Xóa mảng</button>
+        </div>
+      </div>
+    </form>
+    <div class="alert alert-primary my-3">
+      <span class="font-weight-bold">Mảng chứa các số mà bạn đã thêm: </span><span id="mangSo"></span>
+    </div>
+  </header>
+  <section class="menuBody">
+    <div class="menu">
+      <h2 class="text-center">CHỌN CHỨC NĂNG</h2>
+      <div class="menu-item" onclick="showContent('section1')">1. Tổng số dương</div>
+      <div class="menu-item" onclick="showContent('section2')">2. Đếm số dương</div>
+      <div class="menu-item" onclick="showContent('section3')">3. Số nhỏ nhất</div>
+      <div class="menu-item" onclick="showContent('section4')">4. Số dương nhỏ nhất</div>
+      <div class="menu-item" onclick="showContent('section5')">5. Số chẵn cuối cùng</div>
+      <div class="menu-item" onclick="showContent('section6')">6. Đổi chỗ giá trị</div>
+      <div class="menu-item" onclick="showContent('section7')">7. Sắp xếp tăng dần</div>
+      <div class="menu-item" onclick="showContent('section8')">8. Số nguyên tố đầu tiên</div>
+      <div class="menu-item" onclick="showContent('section9')">9. Số nguyên trong mảng số thực</div>
+      <div class="menu-item" onclick="showContent('section10')">10. So sánh số dương và số âm</div>
+    </div>
+    <div class="content">
+      <div class="content-section" id="section1">
+        <h2>Tổng các số dương trong mảng</h2>
+        <button id="btn1" type="button" class="btn btn-success my-4">Kết quả</button>
+        <p class="alert alert-success" id="ketQua1"></p>
+      </div>
+      <div class="content-section" id="section2">
+        <h2>Đếm có bao nhiêu số dương trong mảng</h2>
+        <button id="btn2" type="button" class="btn btn-success my-4">Kết quả</button>
+        <p class="alert alert-success" id="ketQua2"></p>
+      </div>
+      <div class="content-section" id="section3">
+        <h2>Tìm số nhỏ nhất trong mảng</h2>
+        <button id="btn3" type="button" class="btn btn-success my-4">Kết quả</button>
+        <p class="alert alert-success" id="ketQua3"></p>
+      </div>
+      <div class="content-section" id="section4">
+        <h2>Tìm số dương nhỏ nhất trong mảng</h2>
+        <button id="btn4" type="button" class="btn btn-success my-4">Kết quả</button>
+        <p class="alert alert-success" id="ketQua4"></p>
+      </div>
+      <div class="content-section" id="section5">
+        <h2>Tìm số chẵn cuối cùng trong mảng</h2>
+        <p class="my-3 ml-3">* Nếu mảng không có giá trị chẵn thì trả về -1</p>
+        <button id="btn5" type="button" class="btn btn-success my-4">Kết quả</button>
+        <p class="alert alert-success" id="ketQua5"></p>
+      </div>
+      <div class="content-section" id="section6">
+        <h2>Đổi chỗ 2 giá trị trong mảng theo vị trí</h2>
+        <p class="my-3 ml-3">Nhập vào 2 ô input bên dưới index vị trí trong mảng của hai giá trị mà bạn muốn đổi chỗ.
+          (Lưu ý: Giá trị đầu tiên có index là 0)</p>
+        <input type="number" class="mx-3" id="viTri1" placeholder="Nhập vị trí 1"><input type='number' class="mx-3"
+          id="viTri2" placeholder="Nhập vị trí 2">
+        <button id="btn6" type="button" class="d-block btn btn-success ml-3 my-4">Kết quả</button>
+        <p class="alert alert-success">Mảng sau khi đã đổi vị trí 2 giá trị tương ứng:
+          <span id="ketQua6"></span>
+        </p>
+      </div>
+      <div class="content-section" id="section7">
+        <h2>Sắp xếp mảng theo thứ tự tăng dần</h2>
+        <button id="btn7" type="button" class="btn btn-success my-4">Kết quả</button>
+        <p class="alert alert-success">Kết quả sau khi mảng đã được sắp xếp tăng dần là:
+          <span id="ketQua7"></span>
+      </div>
+      <div class="content-section" id="section8">
+        <h2>Tìm số nguyên tố đầu tiên trong mảng</h2>
+        <p class="my-3 ml-3">* Nếu mảng không có số nguyên tố thì trả về – 1</p>
+        <button id="btn8" type="button" class="btn btn-success my-4">Kết quả</button>
+        <p class="alert alert-success">Số nguyên tố đầu tiên trong mảng là:
+          <span id="ketQua8"></span>
+      </div>
+      <div class="content-section" id="section9">
+        <h2 class="mb-5">Nhập thêm 1 mảng số thực, tìm xem trong mảng có bao nhiêu số nguyên?</h2>
+        <form>
+          <div id="themSoThuc" class="form-row form-group">
+            <div class="col-3 mr-3">
+              <input type="text" class="form-control" id="nhapSoThuc" placeholder="Nhập một số thực">
+            </div>
+            <div class="d-flex justify-content-center">
+              <button id="btnThemSoThuc" type="button" class="btn btn-success mr-2">Thêm số vào mảng</button>
+              <button id="btnXoaMangThuc" type="button" class="btn btn-success">Xóa mảng</button>
+            </div>
+          </div>
+        </form>
+        <div class="alert alert-info my-3">
+          <span>Mảng chứa các số thực mà bạn đã thêm: </span><span id="mangSoThuc"></span>
+        </div>
+        <button id="btn9" type="button" class="btn btn-success mt-2 mb-4">Đếm số nguyên</button>
+        <p class="alert alert-success">Số lượng số nguyên trong mảng là:
+          <span id="ketQua9"></span>
+      </div>
+      <div class="content-section" id="section10">
+        <h2>So sánh số lượng số dương và số lượng số âm xem số nào nhiều hơn.</h2>
+        <button id="btn10" type="button" class="btn btn-success my-4">Kết quả</button>
+        <p class="alert alert-success" id="ketQua10"></p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+  <!-- leftManu function -->
+  <script src="./js/leftMenu.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+
+</html>
